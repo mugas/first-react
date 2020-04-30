@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  background: red;
 }
 
 .App-logo {
@@ -35,4 +36,19 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+h1 {
+  color: red;
+}
+
+.checkbox {
+  background: red;
+  width: 50%;
+  padding: 10px;
+  margin: 0 auto;
+}
+
+p {
+  text-align: center;
 }
