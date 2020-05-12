@@ -18,6 +18,7 @@ import React, { Component } from "react";
   );
 }
  */
+
 /* class App extends React.Component {
   constructor() {
     super();
@@ -116,10 +117,25 @@ class App extends React.Component {
     this.state = {
       todos: todosData,
     };
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  handleChange(id) {
+    this.setState((prevState) => {
+      const updatedTodos = prevState.todos.map((todo) => {
+        if (todo.id === id) {
+          todo.completed = !todo.completed;
+        }
+        return todo;
+      });
+      return {
+        todos: updatedTodos,
+      };
+    });
   }
   render() {
     const todoComponents = this.state.todos.map((todo) => (
-      <TodoItem key={todo.id} item={todo} />
+      <TodoItem key={todo.id} item={todo} handleChange={this.handleChange} />
     ));
     return <div>{todoComponents}</div>;
   }
@@ -211,4 +227,82 @@ import Footer from "../Footer/Footer"; */
   );
 } */
 
+//!!State
+/* class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      count: 0,
+    };
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick() {
+    this.setState((prevState) => {
+      return {
+        count: prevState.count + 1,
+      };
+    });
+  }
+
+  render() {
+    return (
+      <div>
+        <h1>{this.state.count}</h1>
+        <button onClick={this.handleClick}>Hit me up</button>
+      </div>
+    );
+  }
+}
+ */
+
+/* class App extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      count: 0,
+      counts: 0,
+      result: 0,
+    };
+    this.handleClick = this.handleClick.bind(this);
+    this.handleClicks = this.handleClicks.bind(this);
+    this.multiplyClick = this.multiplyClick.bind(this);
+  }
+
+  handleClick() {
+    this.setState((prevState) => {
+      return {
+        count: prevState.count + 2,
+      };
+    });
+  }
+
+  handleClicks() {
+    this.setState((prevState) => {
+      return {
+        counts: prevState.counts - 2,
+      };
+    });
+  }
+
+  multiplyClick() {
+    this.setState((prevState) => {
+      return {
+        result: prevState.count * prevState.counts,
+      };
+    });
+  }
+
+  render() {
+    return (
+      <div>
+        <h1>{this.state.count}</h1> <h1>{this.state.counts}</h1>{" "}
+        <h1>{this.state.result}</h1>
+        <button onClick={this.handleClick}>Add me up</button>
+        <button onClick={this.multiplyClick}>Multiply both</button>
+        <button onClick={this.handleClicks}>Add me down</button>
+      </div>
+    );
+  }
+} */
 export default App;
