@@ -107,7 +107,7 @@ class Greeting extends Component {
  */
 
 //**TodoApp *//
-
+/*
 import TodoItem from "../TodoItem/TodoItem";
 import todosData from "../../todosData";
 
@@ -115,7 +115,7 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      todos: todosData,
+      //todos: todosData,
     };
     this.handleChange = this.handleChange.bind(this);
   }
@@ -124,12 +124,12 @@ class App extends React.Component {
     this.setState((prevState) => {
       const updatedTodos = prevState.todos.map((todo) => {
         if (todo.id === id) {
-          todo.completed = !todo.completed;
+          //todo.completed = !todo.completed;
         }
         return todo;
       });
       return {
-        todos: updatedTodos,
+        //todos: updatedTodos,
       };
     });
   }
@@ -140,8 +140,9 @@ class App extends React.Component {
     return <div>{todoComponents}</div>;
   }
 }
+/*
 
-//**Get the hours *//
+//**Get the hours 
 /* 
 function App() {
   const date = new Date(2020, 4, 29, 14);
@@ -305,4 +306,67 @@ import Footer from "../Footer/Footer"; */
     );
   }
 } */
+
+//!!life Cycle Methods
+/*
+ class App extends Component {
+  constructor() {
+    super();
+    this.state = {};
+  }
+
+  componentDidMount() {
+    //get the data I need to correctly display
+  }
+
+  /* componentWillReceiveProps(nextProps) {}
+  render() {
+    return <div>Code Goes Here</div>;
+   }*/
+/*
+  shouldComponentUpdate(nextProps,nextState){
+    //return true if want it to update
+    //return false if not
+  }
+
+  componentWillUnmount(){
+    //remove event listeners
+    //teardown or clean up your code before your component disappears
+  }
+  static getDerivedStateFromProps(props, state){
+ //return the new, update state based upon the props
+  }
+
+  getSnapshotBeforeUpdate(){
+    //create a backup of the current way things are
+  }
+}
+*/
+
+//!! Conditional Rendering
+
+import Conditional from "../Condtional/Conditional";
+class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      isLoading: true,
+    };
+  }
+
+  componentDidMount() {
+    setTimeout(() => {
+      this.setState({
+        isLoading: false,
+      });
+    }, 1500);
+  }
+
+  render() {
+    return (
+      <div>{this.state.isLoading ? <h1>Loading...</h1> : <Conditional />}</div>
+    );
+  }
+}
+
 export default App;
