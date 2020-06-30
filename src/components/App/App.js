@@ -107,7 +107,7 @@ class Greeting extends Component {
  */
 
 //**TodoApp *//
-/*
+/* 
 import TodoItem from "../TodoItem/TodoItem";
 import todosData from "../../todosData";
 
@@ -139,11 +139,10 @@ class App extends React.Component {
     ));
     return <div>{todoComponents}</div>;
   }
-}
-/*
+} */
 
-//**Get the hours 
-/* 
+//**Get the hours
+
 function App() {
   const date = new Date(2020, 4, 29, 14);
   const hours = date.getHours();
@@ -162,7 +161,7 @@ function App() {
     timeofDay = "Night";
   }
   return <h1 style={styles}>Good {timeofDay}</h1>;
-} */
+}
 
 //*Map*//
 
@@ -345,7 +344,7 @@ import Footer from "../Footer/Footer"; */
 
 //!! Conditional Rendering
 
-import Conditional from "../Condtional/Conditional";
+/* import Conditional from "../Condtional/Conditional";
 class App extends Component {
   constructor() {
     super();
@@ -367,6 +366,6 @@ class App extends Component {
       <div>{this.state.isLoading ? <h1>Loading...</h1> : <Conditional />}</div>
     );
   }
-}
+} */
 
 export default App;
